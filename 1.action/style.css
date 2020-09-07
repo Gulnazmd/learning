@@ -1,0 +1,32 @@
+#container {
+	width: 400px;
+	height: 400px;
+	background: blue;
+	position: relative;
+}
+
+#box {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	content: url('images/dino.svg');
+	background-color: transparent;
+}
+
+#boxtwo {
+	width: 50px;
+	height: 50px;
+	background: black;
+	position: absolute;
+	bottom: 25px;
+    right: 25px;
+}
+
+#boxthree {
+	width: 100px;
+	height: 100px;
+	background: white;
+	position: absolute;
+	bottom: 150px;
+    right: 150px;
+}
