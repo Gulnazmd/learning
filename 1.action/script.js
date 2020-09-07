@@ -4,16 +4,24 @@
     }
     function moveX(el, step){
         var next = getClearValue(el.style.left) + step;
-        if (next > 350 | next < 0){
+        var top = getClearValue(el.style.top);
+        if (next < 0 ||  next > 350){
             return
-        }
+        }    
+        if ((next == 150 || next == 200) && (top == 150 || top == 200)){
+            return
+        } 
         el.style.left = next + "px";
     }
     function moveY(el, step){
         var next = getClearValue(el.style.top) + step;
-        if (next > 350 | next < 0){
+        var left = getClearValue(el.style.left);
+        if (next < 0 || next > 350){
             return
         }
+        if ((next == 150 || next == 200) && (left == 150 || left == 200)){
+            return
+        }        
         el.style.top = next + "px";
     }
 
@@ -21,19 +29,19 @@
       var box = document.getElementById("box");
       var step = 50;
         if (event.keyCode === 87) {
-            // up arrow
+            // up 
             moveY(box, -step);
         }
         else if (event.keyCode === 83) {
-            // down arrow
+            // down 
             moveY(box, step);
         }
         else if (event.keyCode === 65) {
-           // left arrow
+           // left 
            moveX(box, -step);
         }
         else if (event.keyCode === 68) {
-           // right arrow
+           // right 
            moveX(box, step);
         } 
     });
