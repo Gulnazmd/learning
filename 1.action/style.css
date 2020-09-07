@@ -17,8 +17,8 @@
 	height: 50px;
 	background: black;
 	position: absolute;
-	bottom: 23px;
-    right: 23px;
+	bottom: 25px;
+    right: 25px;
 }
 
 #boxthree {
@@ -26,6 +26,6 @@
 	height: 100px;
 	background: white;
 	position: absolute;
-	bottom: 170px;
-    right: 170px;
+	bottom: 150px;
+    right: 150px;
 }
