@@ -8,8 +8,9 @@
 #box {
 	width: 50px;
 	height: 50px;
-	background: bisque;
 	position: absolute;
+	content: url('images/dino.svg');
+	background-color: transparent;
 }
 
 #boxtwo {
