@@ -1,29 +1,20 @@
-window.onload = function (){
 
-    var leftPos = 0;
-    var topPos = 0;
-    var box = document.getElementById("box");
-    var actionRight = setInterval(moveRight, 10);
-    var actionDown = setInterval(moveDown, 10);
-
-    function moveRight() {
-        if(box.style.left == "350px") {
-            clearInterval(actionRight);
-            return;
-        } else {
-            leftPos+=1;
-            box.style.left = leftPos + "px";
+    document.addEventListener('keypress', event => {
+      var box = document.getElementById("box");
+        if (event.keyCode === 87) {
+            // up arrow
+            box.style.top = "0px";
         }
-    }
-
-    function moveDown() {
-        if(box.style.top == "350px") {
-            clearInterval(actionDown);
-            return;
-        } else {
-            topPos+=1;
-            box.style.top = topPos + "px";
+        else if (event.keyCode === 83) {
+            // down arrow
+            box.style.top = "350px";
         }
-    }   
-    
-}
+        else if (event.keyCode === 65) {
+           // left arrow
+           box.style.left = "0px";
+        }
+        else if (event.keyCode === 68) {
+           // right arrow
+           box.style.left = "350px";
+        } 
+    });
