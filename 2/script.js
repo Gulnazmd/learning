@@ -29,6 +29,11 @@ window.onload = function() {
         loadQuestion(questionNumber, questions);
     });
 
+    let finishBtn = document.getElementById("control-finish")
+    finishBtn.addEventListener("click", function(){
+        result = prompt('Congratulation! Write down your name, please.')
+    });
+
 }
 
 // Загружает вопрос с номером number
@@ -52,18 +57,23 @@ function loadQuestion(number, questions){
         <input type="checkbox" id="answer-choice-${index}" name="contact" value="${index}">
         <label for="answer-choice-${index}">${currentValue}</label>`
     });
-
     // Если это последний вопрос скрываем Next
+    let finishBtn = document.getElementById("control-finish");
+    let nextBtn = document.getElementById("control-next");
+    let previousBtn = document.getElementById("control-previous");
     if (number + 1 == questions.length)
     {
-        let nextBtn = document.getElementById("control-next");
         nextBtn.style.display = "none";
-        let finishBtn = document.getElementById("control-finish");
         finishBtn.style.display = "inline";
-        let previousBtn = document.getElementById("control-previous");
-        previousBtn.style.display = "none"
-
-    } 
+    } else if (number == 0) 
+    {
+        previousBtn.style.display = "none";
+    } else {
+        previousBtn.style.display = "inline";
+        nextBtn.style.display = "inline";
+        finishBtn.style.display = "none";
+    }
+    
 }
 
 // Вопрос
