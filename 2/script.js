@@ -2,11 +2,13 @@
 window.onload = function() {
 
     const questions = [
-        new question("What do you want to learn?", ["HTML", "JS", "CSS", "C#"], "0"),
-        new question("Which words are used in HTML?", ["back", "head", "body", "eyes"], ["1", "2"]),
-        new question("What statments are true for 'String'?",
+        new question("single", "What do you want to learn?", ["HTML", "JS", "CSS", "C#"], "0"),
+        new question("multiple", "Which words are used in HTML?", ["back", "head", "body", "eyes"], ["1", "2"]),
+        new question("single", "What do you want to learn?", ["HTML", "JS", "CSS", "C#"], "0"),        
+        new question("multiple", "What statments are true for 'String'?",
                      ["a data type used in programming", "used to represent text", "a data type with 2 possible values", 
-                     "it shows that data value does not exist in the database"], ["0", "1"])
+                     "it shows that data value does not exist in the database"], ["0", "1"]),
+        new question("dragAndDrop", "Fill in the gaps", ["ans1", "ans2", "ans3", "ans4", "ans5"], []),
 
     ];
 
@@ -64,13 +66,27 @@ function loadQuestion(number, questions){
     let questionString = "<fieldset>";
     // Записываем ответы
     const answers = questions[number].answers;
-    answers.forEach(function callback(currentValue, index, array) {
-        questionString += `
-        <div>
-        <input type="checkbox" id="answer-choice-${index}" name="answer-choice" value="${index}">
-        <label for="answer-choice-${index}">${currentValue}</label>
-        </div>`
-    });
+
+    if (questions[number].type == "multiple"){
+        answers.forEach(function callback(currentValue, index, array) {
+            questionString += `
+            <div>
+            <input type="checkbox" id="answer-choice-${index}" name="answer-choice" value="${index}">
+            <label for="answer-choice-${index}">${currentValue}</label>
+            </div>`
+        });
+    }
+
+    if (questions[number].type == "single"){
+        answers.forEach(function callback(currentValue, index, array) {
+            questionString += `
+            <div>
+            <input type="radio" id="answer-choice-${index}" name="answer-choice" value="${index}">
+            <label for="answer-choice-${index}">${currentValue}</label>
+            </div>`
+        });
+    }
+
     questionString += "</fieldset>";
     answersBlock.innerHTML =  questionString;
     // Если это последний вопрос скрываем Next
@@ -138,25 +154,44 @@ function printResults(userAnswers, questions){
         return accumulator;       
     }, 0);
 
-
-
     let testBox = document.getElementById("test-box");
     testBox.innerHTML = "";
     var results = document.createElement("div");
     results.setAttribute("id", "results")
     var resultsText = document.createTextNode(`Your results: Correct answers: ${correctAnswersCount}`); 
     results.appendChild(resultsText); 
-    testBox.appendChild(results);  
+    testBox.appendChild(results);
+    
+    localStorage.setItem("testCompleted", true)
+    localStorage.setItem("testResults", correctAnswersCount)
 }
 
 function init(questions){
-    loadQuestion(0, questions);
+
+
     let finishBtn = document.getElementById("control-finish");
     finishBtn.style.display = "none";
+
+    const testCompleted = sessionStorage.getItem("testCompleted");
+    if (testCompleted != null && testCompleted){
+        const correctAnswersCount = sessionStorage.getItem("testResults");
+        let testBox = document.getElementById("test-box");
+        testBox.innerHTML = "";
+        var results = document.createElement("div");
+        results.setAttribute("id", "results")
+        var resultsText = document.createTextNode(`Test already completed. Your results: Correct answers: ${correctAnswersCount}`); 
+        results.appendChild(resultsText); 
+        testBox.appendChild(results);
+        return;
+    }
+
+    loadQuestion(0, questions);
+
 }
 
 // Вопрос
-function question(text, answers, correctAnswer){
+function question(type, text, answers, correctAnswer){
+    this.type = type,
     this.text = text,
     this.answers = answers,
     this.correctAnswer = correctAnswer;
