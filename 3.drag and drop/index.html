@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>draggable</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="script.js"></script>
+ </head> 
+ <body> 
+  <div> When George <span class="answer" id="answer-0"></span> 
+    his own business, everyone told him he was crazy to 
+    <span class="answer" id="answer-1"></span> bla bla bla <span class="answer" id="answer-2"></span> 
+  </div>
+  <br>
+  <button id="myCheck">Check</button>
+  <br>
+  <br>
+  <div ondrop="onDrop(event)" ondragover="onDragover(event)" class="variants">
+    <span class="variant" id="variant-0">A</span>
+    <span class="variant" id="variant-1">B</span>
+    <span class="variant" id="variant-2">C</span>
+  </div>
+ </body> 
+</html>

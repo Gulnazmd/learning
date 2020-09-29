@@ -45,3 +45,13 @@
            moveX(box, step);
         } 
     });
+    var sphere = document.getElementById("sphere");
+    sphere.onclick = function() {
+    let start = Date.now();
+    let timer = setInterval(function() {
+        let timePassed = Date.now() - start;
+        sphere.style.left = timePassed / 5 + 'px';
+        if (timePassed > 1500) 
+            clearInterval(timer);
+        }, 20)
+    }

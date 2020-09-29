@@ -1,0 +1,33 @@
+.variants {
+  border: 1px solid #929292;
+  height: 292px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 1px solid #000000;
+ }
+
+ span {
+  cursor: move;
+ }
+
+ .variant {
+  border: 1px solid #000000;
+  border-radius: 3px;
+  background-color: #11ff00;
+ }
+
+ .answer {
+  width: 50px;
+  height: 25px;
+  display: inline-block;
+  background-color: #ebebeb;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+ }
+ #myCheck:hover {
+  background-color: aquamarine;
+  border-radius: 6px;
+ }
