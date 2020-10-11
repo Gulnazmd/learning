@@ -5,3 +5,23 @@
     -o-user-select: none;
     user-select: none;
 }
+.answer {
+    width: 75px;
+    height: 25px;
+    display: inline-block;
+    background-color: #ffffef;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+   }
+.variant {
+    z-index: 1000;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background-color: yellow;
+}
+
+fieldset {
+    height: 100px;
+}
