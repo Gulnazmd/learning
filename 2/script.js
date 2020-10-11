@@ -12,7 +12,6 @@ window.onload = function() {
                      ["a data type used in programming", "used to represent text", "a data type with 2 possible values", 
                      "it shows that data value does not exist in the database"], ["0", "1"]),
         new question("draggable", "Fill {0} the gaps {1} the blanks", ["in", "after", "to"], ["0", "2"]),
-
     ];
 
     init(questions);
@@ -59,6 +58,36 @@ function loadQuestion(number, questions){
     loadQuestionBody(questions[number]);
     // Обновляем варианты ответов
     loadQuestionBodyVariants(questions[number]);
+
+    // Обновляем ответы
+    // Очищаем блок с ответами
+    let answersBlock = document.getElementById("content-answers");
+    let questionString = "<fieldset>";
+    // Записываем ответы
+    const answers = questions[number].answers;
+
+    if (questions[number].type == "multiple"){
+        answers.forEach(function callback(currentValue, index, array) {
+            questionString += `
+            <div>
+            <input type="checkbox" id="answer-choice-${index}" name="answer-choice" value="${index}">
+            <label for="answer-choice-${index}">${currentValue}</label>
+            </div>`
+        });
+    }
+
+    if (questions[number].type == "single"){
+        answers.forEach(function callback(currentValue, index, array) {
+            questionString += `
+            <div>
+            <input type="radio" id="answer-choice-${index}" name="answer-choice" value="${index}">
+            <label for="answer-choice-${index}">${currentValue}</label>
+            </div>`
+        });
+    }
+
+    questionString += "</fieldset>";
+    answersBlock.innerHTML =  questionString;
 
     // Если это последний вопрос скрываем Next
     let finishBtn = document.getElementById("control-finish");
@@ -170,7 +199,6 @@ function init(questions){
     }
 
     loadQuestion(0, questions);
-
 }
 
 function loadQuestionBody(question){
