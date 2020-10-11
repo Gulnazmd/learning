@@ -59,36 +59,6 @@ function loadQuestion(number, questions){
     // Обновляем варианты ответов
     loadQuestionBodyVariants(questions[number]);
 
-    // Обновляем ответы
-    // Очищаем блок с ответами
-    let answersBlock = document.getElementById("content-answers");
-    let questionString = "<fieldset>";
-    // Записываем ответы
-    const answers = questions[number].answers;
-
-    if (questions[number].type == "multiple"){
-        answers.forEach(function callback(currentValue, index, array) {
-            questionString += `
-            <div>
-            <input type="checkbox" id="answer-choice-${index}" name="answer-choice" value="${index}">
-            <label for="answer-choice-${index}">${currentValue}</label>
-            </div>`
-        });
-    }
-
-    if (questions[number].type == "single"){
-        answers.forEach(function callback(currentValue, index, array) {
-            questionString += `
-            <div>
-            <input type="radio" id="answer-choice-${index}" name="answer-choice" value="${index}">
-            <label for="answer-choice-${index}">${currentValue}</label>
-            </div>`
-        });
-    }
-
-    questionString += "</fieldset>";
-    answersBlock.innerHTML =  questionString;
-
     // Если это последний вопрос скрываем Next
     let finishBtn = document.getElementById("control-finish");
     let nextBtn = document.getElementById("control-next");
