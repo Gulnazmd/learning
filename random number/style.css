@@ -1,0 +1,134 @@
+body {
+  background-color: rgba(189, 165, 124, 0.274);
+}
+#btn1 {
+  background-color: #e6d8163d;
+  border: 1px solid #555555;
+  border-radius: 12px;
+  color: black;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  display: block;
+  outline:none;
+}
+#btn1:hover {
+  background-color: rgba(167, 90, 46, 0.705);
+}
+#btn1:active {
+  background-color: rgba(38, 38, 168, 0.733);
+}
+
+.card {
+  border: 1px solid #faea07;
+  background-color: rgba(245, 190, 9, 0.267);
+  height: 100px;
+  border-radius: 50px;
+  width: 200px;
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+}
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+
+}
+p {
+  text-align: center;
+  color: rgba(170, 64, 64, 0.801);
+  font-family: Impact, Charcoal, sans-serif;
+}
+.card p:nth-child(2) {
+  color: rgba(235, 56, 11, 0.849);
+  font-size: 25px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+span{
+  text-shadow:10px 5px 5px grey;
+}
+.sololearn span{
+  display: block;
+  font-size: 45px;
+  position: absolute;
+  color: rgba(212, 23, 23, 0.644);
+  width: 200px;
+
+}.sololearn span:nth-child(1)
+{
+  bottom: 30px;
+  left: 27%;
+  animation: solo 4s linear 2;
+}
+.sololearn span:nth-child(2)
+{
+  bottom: 40px;
+  left: 33%;
+  animation: solo 4.5s linear 2;
+}
+.sololearn span:nth-child(3)
+{
+  bottom: 50px;
+  left: 40%;
+  animation: solo 5s linear 2;
+}
+.sololearn span:nth-child(4)
+{
+  bottom: 60px;
+  left: 45%;
+  animation: solo 5.5s linear 2;
+}
+.sololearn span:nth-child(5)
+{
+  bottom: 70px;
+  left: 52%;
+  animation: solo 6s linear 2;
+}
+.sololearn span:nth-child(6)
+{
+  bottom: 80px;
+  left: 59%;
+  animation: solo 6.5s linear 2;
+}
+.sololearn span:nth-child(7)
+{
+  bottom: 90px;
+  left: 65%;
+  animation: solo 7s linear 2;
+}
+.sololearn span:nth-child(8)
+{
+  bottom: 100px;
+  left: 71%;
+  animation: solo 7.5s linear 2;
+}
+.sololearn span:nth-child(9)
+{
+  bottom: 110px;
+  left: 77%;
+  animation: solo 8s linear 2;
+}
+@keyframes solo {
+  0%{
+    bottom: 100%;
+  } 
+  100%{
+    bottom: 0;
+  }
+}
+#pic {
+  font-size: 250px;
+  left: 35%;
+  position: absolute;
+  opacity: 30%;
+}
