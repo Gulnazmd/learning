@@ -1,0 +1,17 @@
+button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 50px;
+    width: 100px;
+    color: rgb(128, 127, 206);
+    background-color: azure;
+    border-radius: 50cm;
+    border-color: navajowhite;
+}
+#KulSharif {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    opacity: 70%;
+}
