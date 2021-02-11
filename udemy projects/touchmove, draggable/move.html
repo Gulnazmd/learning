@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="move.css"/>
+        <title>Draggable</title>
+    </head>
+<body class="showCircle">
+    <h1>Put the flags into correct place</h1>
+    <div class="empty-container">
+        <div class="image-container"><img src="https://s1.travix.com/blog/north-america-las-vegas-grand-canyon-river.jpg" alt="https://i.pinimg.com/originals/de/7d/2b/de7d2bea313b910cb1dc5b232d569e63.jpg"/>
+            <span class="empty" id="empty-1"></span>
+            <p class="description">
+                Grand Canyon, USA</br>
+                You can discover the wonders</br>
+                of nature in a variety of ways, </br>
+                including a boat ride across </br>
+                the Colorado River and </br>
+                the surrounding area.
+            </p>
+            
+        </div>
+        <div class="image-container"><img src="https://s1.travix.com/blog/asia-vietnam-halong-bay-boats-blue-water-sunny.png" alt="https://media.worldnomads.com/social-share-images/south-east-asia/halong-bay.jpg" />
+            <span class="empty" id="empty-2"></span>
+            <p class="description">
+                Ha Long Bay, Vietnam</br>
+                You can rent a boat and swim </br>
+                in the turquoise blue sea, </br>
+                an indescribable experience!
+            </p>
+            
+        </div>
+        <div class="image-container"><img src="https://img.theculturetrip.com/wp-content/uploads/2018/05/1024px-grand_cascade_in_peterhof_01.jpg" alt="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/62/e6.jpg"/>
+            <span class="empty" id="empty-3"></span>
+            <p class="description">
+                Peterhof Palace, Russia</br>
+                Peterhof is the most magical</br>
+                palace in Russia. </br>
+                The gardens and fountains </br>
+                of Peterhof has earned</br>
+                it the title of the world’s</br>
+                most splendid Royal Residence.
+            </p>
+
+            
+        </div>
+        <div class="image-container"><img src="https://media.cntraveler.com/photos/5cb63a0bc131b962ade953ad/master/w_1600%2Cc_limit/Banff-Canada_GettyImages-680900749.jpg" alt="https://happytowander.com/wp-content/uploads/Lake-Moraine-Happy-to-Wander-0194.jpg" />
+            <span class="empty" id="empty-4"></span>
+                <p class="description">
+                    Banff National Park, Canada</br>
+                    The glacial lakes in Canada's </br>
+                    first national park </br>
+                    have some of the bluest water</br>
+                    you've ever seen.
+                </p>
+        
+        </div>
+    </div>
+    <div class="fill-container">
+        <span class="fill" draggable="true"><img id="fill-1" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png" style="width: 90px; height: 60px"/></span>
+        <span class="fill" draggable="true"><img id="fill-2" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" style="width: 90px; height: 60px"/></span>
+        <span class="fill" draggable="true"><img id="fill-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1200px-Flag_of_Canada_%28Pantone%29.svg.png" style="width: 90px; height: 60px"/></span>
+        <span class="fill" draggable="true"><img id="fill-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png" style="width: 90px; height: 60px"/></span>
+    </div>
+
+    <div>
+            <button class="ripple" id="choise" onclick="reloadMyPage()">
+                reload 
+            </button>
+    </div>
+    <script src="move.js"></script>
+</body>
