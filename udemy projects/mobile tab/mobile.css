@@ -165,3 +165,63 @@ h3 {
     display: flex;
     justify-content: center;
 }
+
+/* clock */
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1000;
+}
+.clock {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    border-radius: 100%;
+}
+.needle {
+    background-color: #000;
+    width: 3px;
+    height: 45px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom center; 
+    transition: all 0.5s ease-in;
+}
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 65px;
+    width: 2px;
+}
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 65px;
+    width: 1px;
+    background-color: #ff1111;
+}
+.center-point {
+    background-color: #ff1111;
+    width: 7px;
+    height: 7px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+}
+.time {
+    font-size: 32px;
+}
+.date {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: rgb(54, 50, 50);
+}
