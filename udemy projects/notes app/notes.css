@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-top: 4rem;
+}
+.add {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    align-items: center;
+    cursor: pointer;
+    background-color: #457b9d;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: aliceblue;
+}
+.add:focus {
+    outline: none;
+}
+.note {
+    background-color: #a8dadc;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+    margin: 30px 20px;
+    height: 250px;
+    width: 250px;
+    border-radius: 7px;
+}
+.note .tools {
+    background-color: #457b9d;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    border-radius: 3px 3px 0 0;
+}
+.note .tools img {
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.note textarea {
+    background-color: #a8dadc;
+    border: none;
+    width: 100%;
+    height: 210px;
+    outline: none;
+    font-family: inherit;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+.main {
+    padding: 20px;
+}
+.hidden {
+    display: none;
+}
