@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(253, 249, 244);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* canvas drawing */
+canvas {
+    border: 2px solid #b68973;
+    background-color: #fff;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5);
+}
+.toolbox {
+    border: 1px solid #b68973;
+    background-color: #b68973;
+    width: 404px;
+    padding: 1rem;
+    display: flex;
+    border-radius: 0 0 10px 10px;
+}
+.toolboxEl {
+    background-color: #faf3e0;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    margin: 0.25rem;
+    border-radius: 2px;
+}
+.toolboxEl:focus {
+    outline: none;
+}
+.toolboxEl:hover {
+    background-color: #f0e3c1;
+}
+#clear {
+    background-color: transparent;
+    margin-left: auto;
+}
+#size {
+    background-color: transparent;
+    color: #fff;
+    cursor: none;
+}
