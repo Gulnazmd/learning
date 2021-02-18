@@ -29,8 +29,32 @@ body {
 }
 .phone .content.show {
     opacity: 1;
-    z-index: 100;
-
+    z-index: 1;
+}
+#mainImg {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.camera {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #333;
+    z-index: 2;
+    left: 50%;
+    top: 10px;
+}
+.smallCamera {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background-color: rgb(146, 144, 144);
+    z-index: 3;
+    left: 50.5%;
+    top: 13px;
 }
 nav {
     position: absolute;
@@ -56,6 +80,7 @@ nav ul li {
     width: 40px;
     height: 40px;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 /* flags game */
@@ -175,12 +200,14 @@ h3 {
     justify-content: space-between;
     position: absolute;
     z-index: 1000;
+    margin: 10px;
 }
 .clock {
     height: 150px;
     width: 150px;
     position: relative;
     border-radius: 100%;
+    background: linear-gradient(#c0fdff, #d0d1ff);
 }
 .needle {
     background-color: #000;
@@ -225,3 +252,81 @@ h3 {
     text-transform: uppercase;
     color: rgb(54, 50, 50);
 }
+.twelve {
+    position: relative;
+    left: 46%;
+    top: 5px;
+}
+.three {
+    position: relative;
+    left: 77%;
+    top: 45%;
+}
+.six {
+    position: relative;
+    left: 25%;
+    top: 85%;
+}
+.nine {
+    position: relative;
+    left: -27%;
+    top: 44%;
+}
+span {
+    font-family: 'Long Cang', cursive;
+    color: rgba(69, 78, 78, 0.596);
+}
+
+/* canvas drawing */
+
+canvas {
+    border: 2px solid #b68973;
+    background-color: #fff;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5);
+    width: 350px;
+    margin-top: 23px;
+    position: absolute;
+    left: 5%;
+    border-radius: 5px 5px 0 0;
+}
+.toolbox {
+    border: 1px solid #b68973;
+    background-color: #b68973;
+    width: 350px;
+    padding: 1rem;
+    display: flex;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    margin-top: 373px;
+    left: 5%;
+}
+.toolboxEl {
+    background-color: #faf3e0;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    margin: 0.25rem;
+    border-radius: 2px;
+}
+.toolboxEl:focus {
+    outline: none;
+}
+.toolboxEl:hover {
+    background-color: #f0e3c1;
+}
+#clear {
+    background-color: transparent;
+    margin-left: auto;
+}
+#size {
+    background-color: transparent;
+    color: #fff;
+    cursor: none;
+}
+
+

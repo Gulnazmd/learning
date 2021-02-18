@@ -7,9 +7,15 @@
     </head>
     <body>
           <div class="phone">
+              <div class="camera"></div>
+              <div class="smallCamera"></div>
         <div class="content show" id="mainPage">
-              <div class="clock-container">
+            <div class="clock-container">
                 <div class="clock">
+                    <span class="twelve">12</span>
+                    <span class="three">3</span>
+                    <span class="six">6</span>
+                    <span class="nine">9</span>
                     <div class="needle hour"></div>
                     <div class="needle minute"></div>
                     <div class="needle second"></div>
@@ -18,7 +24,8 @@
                 <div class="time"></div>
                 <div class="date"><span class="circle"></span></div>
             </div>
-            <img id="mainPage" src="https://i.pinimg.com/564x/6f/55/9e/6f559e8f535687825d214877d76d120f.jpg" alt="https://i.pinimg.com/564x/12/9c/fc/129cfcbc78a2e8a26f5157d9534abaa2.jpg">
+            
+            <img id="mainImg" src="https://i.pinimg.com/564x/6f/55/9e/6f559e8f535687825d214877d76d120f.jpg" alt="https://i.pinimg.com/564x/12/9c/fc/129cfcbc78a2e8a26f5157d9534abaa2.jpg">
         </div>
               <div class="content"  id="game">
                     <h3>Put the flags into correct place</h3>
@@ -79,7 +86,19 @@
         <span class="fill" draggable="true"><img style="width: 55px; height: 37px" id="fill-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png"/></span>
     </div>
               </div>
-              <img class="content" id="weather" src="https://i.pinimg.com/564x/f0/51/2b/f0512bbf1545fafaf5759042010107ee.jpg" alt="https://i.pinimg.com/564x/4e/4b/9c/4e4b9c98c6120b3d38fbc53d63f373c4.jpg">
+              <div class="content" id="drawing">
+                    
+                <!--canvas drawing-->
+                    <canvas id="canvas" width="400px" height="400px"></canvas>
+                    <div class="toolbox">
+                        <button class="toolboxEl" id="decrease">-</button>
+                        <span  class="toolboxEl" id="size">5</span>
+                        <button class="toolboxEl" id="increase">+</button>
+                        <input class="toolboxEl" type="color" id="color"/>
+                        <img class="toolboxEl" id="clear" src="https://blog.philmorehost.com/wp-content/uploads/2019/01/delete.png" alt="https://www.vhv.rs/dpng/d/80-806876_clear-cache-icon-png-transparent-png.png">
+                    </div>
+                    <img  id="drawingPic" src="https://i.pinimg.com/564x/f0/51/2b/f0512bbf1545fafaf5759042010107ee.jpg" alt="https://i.pinimg.com/564x/4e/4b/9c/4e4b9c98c6120b3d38fbc53d63f373c4.jpg">
+                </div>
               <img class="content" id="contacts" src="https://i.pinimg.com/564x/f4/d4/35/f4d43568dde4badde74378475ac9a76a.jpg" alt="https://i.pinimg.com/564x/50/23/5d/50235d5f3f75a9411dcf43c7f5ad2d5a.jpg">
               <img class="content" id="viber" src="https://i.pinimg.com/564x/cb/90/e8/cb90e88fe71b9abb0565bf8373aeeea7.jpg" alt="https://i.pinimg.com/564x/5b/9a/a6/5b9aa6b5b4a91a736d2d3ff597fbebdb.jpg">
               <nav>
@@ -94,7 +113,7 @@
                         <img id="btnHome" class="btnIcons" src="https://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" alt="https://cdn.pixabay.com/photo/2017/09/12/06/26/home-2741413_1280.png">
                     </li>
                     <li>
-                        <img id="btnWeather" class="btnIcons" src="https://cdn.iconscout.com/icon/free/png-512/weather-191-461610.png" alt="https://cdn.iconscout.com/icon/free/png-512/weather-192-461761.png">
+                        <img id="btnDraw" class="btnIcons" src="https://cdn1.iconfinder.com/data/icons/app-5/48/24-512.png" alt="https://www.vippng.com/png/detail/10-103323_phone-icons-teal-mobile-app-icon-transparent-background.png">
                     </li>
                 
                     <li>
