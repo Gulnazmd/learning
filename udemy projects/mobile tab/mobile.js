@@ -34,11 +34,22 @@ function dragStart(e) {
 
 function dragEnd() {
     this.className = 'fill'
+    let x = parseInt(boxes.style.left);
+    let y = parseInt(boxes.style.top);
     checkAnswer()
 }
 
-function dragOver(e) {
-    e.preventDefault()
+function dragOver(event) {
+    event.preventDefault()
+    let touchLocation = event.targetTouches[0];
+      
+      // assign box new coordinates based on the touch.
+      elem.style.left = touchLocation.pageX + 'px';
+      elem.style.top = touchLocation.pageY + 'px';
+    onMove(event.targetTouches[0].clientX, 
+        event.targetTouches[0].clientY, 
+        event.targetTouches[0].pageX, 
+        event.targetTouches[0].pageY); 
 }
 
 function dragLeave() {
@@ -295,5 +306,33 @@ decreaseBtn.addEventListener('click', () => {
 
 colorEl.addEventListener('change', (e) => color = e.target.value )
 clearBtn.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height))
+
+// viber warning
+
+const enterBtn = document.getElementById('enter');
+enterBtn.addEventListener('click', () => addNote())
+
+function addNote(){
+    const note = document.createElement('div');
+    note.classList.add('note')
+
+    note.innerHTML = `
+    <div class="warning">
+    <h4 id="warningText">You don't know the password.</br>
+              It's too privite!!!</h4>
+    <button id="warningBtn">Close</button>
+    </div>
+    `
+    const warningBtn = note.querySelector('#warningBtn')
+
+    warningBtn.addEventListener('click', () => {
+    note.remove();
+    })
+
+document.body.appendChild(note)
+}
+
+
+
 
 
